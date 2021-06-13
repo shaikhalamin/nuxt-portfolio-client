@@ -3,7 +3,7 @@
     <b-jumbotron style="border-radius: 0px; background-color: rgb(66 165 183)">
       <b-container>
         <b-row class="text-center">
-          <b-col cols="12">
+          <b-col v-if="profile" cols="12">
             <h1 v-if="profile" class="text-white">
               <b><span class="i-am">I'm</span> {{ profile.full_name }}</b>
             </h1>
@@ -18,13 +18,13 @@
               ></i>
               <span class="text-white font-18">{{ profile.email }}</span>
             </p>
-            <b-row class="text-center">
+            <b-row v-if="profile" class="text-center">
               <b-col md="6" offset-md="3" class="mt-2 mb-2">
                 <b-button variant="dark" size="sm">Download CV</b-button>
                 <b-button variant="dark" size="sm">Hire Me</b-button>
               </b-col>
             </b-row>
-            <ul class="nav justify-content-center">
+            <ul v-if="profile" class="nav justify-content-center">
               <li class="nav-item">
                 <a
                   class="btn btn-sm"
